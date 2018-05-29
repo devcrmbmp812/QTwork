@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<%#include "mdconstituentstage.h" %>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= controller()->name() + ": " + controller()->activeAction() %></title>
+</head>
+<body>
+
+<h1>Listing Md Constituent Stage</h1>
+
+<%== linkTo("Create a new Md Constituent Stage", urla("create")) %><br />
+<%== linkTo("Load CSV Md Constituent Stage", urla("load")) %><br />
+<br />
+<table border="1" cellpadding="5" style="border: 1px #d0d0d0 solid; border-collapse: collapse;">
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Constituent Ticker</th>
+    <th>Coupon</th>
+    <th>Cusip</th>
+    <th>Isin</th>
+    <th>Sedol</th>
+    <th>Bbgid</th>
+    <th>Ric</th>
+    <th>Industry</th>
+    <th>Subindustry</th>
+    <th>Industry Group</th>
+    <th>Sector</th>
+    <th>Weight</th>
+  </tr>
+<% tfetch(QList<MdConstituentStage>, mdConstituentStageList); %>
+<% for (const auto &i : mdConstituentStageList) { %>
+  <tr>
+    <td><%= i.id() %></td>
+    <td><%= i.date() %></td>
+    <td><%= i.constituentTicker() %></td>
+    <td><%= i.coupon() %></td>
+    <td><%= i.cusip() %></td>
+    <td><%= i.isin() %></td>
+    <td><%= i.sedol() %></td>
+    <td><%= i.bbgid() %></td>
+    <td><%= i.ric() %></td>
+    <td><%= i.industry() %></td>
+    <td><%= i.subindustry() %></td>
+    <td><%= i.industryGroup() %></td>
+    <td><%= i.sector() %></td>
+    <td><%= i.weight() %></td>
+    <td>
+      <%== linkTo("Show", urla("show", i.id())) %>
+      <%== linkTo("Edit", urla("save", i.id())) %>
+      <%== linkTo("Remove", urla("remove", i.id()), Tf::Post, "confirm('Are you sure?')") %>
+    </td>
+  </tr>
+<% } %>
+</table>
+
+</body>
+</html>

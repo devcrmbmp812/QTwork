@@ -1,0 +1,13 @@
+cmake-build-debug
+lib
+tmp
+log
+a.out
+test.cpp
+test.h
+.idea
+views/_src/
+
+*.log
+
+*.csv

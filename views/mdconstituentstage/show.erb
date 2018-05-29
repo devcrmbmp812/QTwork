@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<%#include "mdconstituentstage.h" %>
+<% tfetch(MdConstituentStage, mdConstituentStage); %>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= controller()->name() + ": " + controller()->activeAction() %></title>
+</head>
+<body>
+<p style="color: red"><%=$ error %></p>
+<p style="color: green"><%=$ notice %></p>
+
+<h1>Showing Md Constituent Stage</h1>
+<dt>ID</dt><dd><%= mdConstituentStage.id() %></dd><br />
+<dt>Date</dt><dd><%= mdConstituentStage.date() %></dd><br />
+<dt>Constituent Ticker</dt><dd><%= mdConstituentStage.constituentTicker() %></dd><br />
+<dt>Coupon</dt><dd><%= mdConstituentStage.coupon() %></dd><br />
+<dt>Cusip</dt><dd><%= mdConstituentStage.cusip() %></dd><br />
+<dt>Isin</dt><dd><%= mdConstituentStage.isin() %></dd><br />
+<dt>Sedol</dt><dd><%= mdConstituentStage.sedol() %></dd><br />
+<dt>Bbgid</dt><dd><%= mdConstituentStage.bbgid() %></dd><br />
+<dt>Ric</dt><dd><%= mdConstituentStage.ric() %></dd><br />
+<dt>Industry</dt><dd><%= mdConstituentStage.industry() %></dd><br />
+<dt>Subindustry</dt><dd><%= mdConstituentStage.subindustry() %></dd><br />
+<dt>Industry Group</dt><dd><%= mdConstituentStage.industryGroup() %></dd><br />
+<dt>Sector</dt><dd><%= mdConstituentStage.sector() %></dd><br />
+<dt>Weight</dt><dd><%= mdConstituentStage.weight() %></dd><br />
+<dt>Created at</dt><dd><%= mdConstituentStage.createdAt() %></dd><br />
+<dt>Updated at</dt><dd><%= mdConstituentStage.updatedAt() %></dd><br />
+<dt>Lock Revision</dt><dd><%= mdConstituentStage.lockRevision() %></dd><br />
+
+<%== linkTo("Edit", urla("save", mdConstituentStage.id())) %> |
+<%== linkTo("Back", urla("index")) %>
+
+</body>
+</html>

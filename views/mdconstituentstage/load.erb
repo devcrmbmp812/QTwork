@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<%#include "mdconstituentstage.h" %>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= controller()->name() + ": " + controller()->activeAction() %></title>
+</head>
+<body>
+<p style="color: red"><%=$ error %></p>
+<p style="color: green"><%=$ notice %></p>
+
+<h1>Load Md Constituent Stage</h1>
+
+<%== formTag(urla("load"), Tf::Post, true) %>
+  <p>
+    File: <input name="csv" type="file">
+  </p>
+  <p>
+    <input type="submit" value="Upload">
+  </p>
+</form>
+
+<%== linkTo("Back", urla("index")) %>
+
+</body>
+</html>

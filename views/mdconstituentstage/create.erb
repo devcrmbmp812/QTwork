@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<%#include "mdconstituentstage.h" %>
+<% tfetch(QVariantMap, mdConstituentStage); %>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= controller()->name() + ": " + controller()->activeAction() %></title>
+</head>
+<body>
+<p style="color: red"><%=$ error %></p>
+<p style="color: green"><%=$ notice %></p>
+
+<h1>New Md Constituent Stage</h1>
+
+<%== formTag(urla("create"), Tf::Post) %>
+  <p>
+    <label>Date<br /><input name="mdConstituentStage[date]" value="<%= mdConstituentStage["date"] %>" /></label>
+  </p>
+  <p>
+    <label>Constituent Ticker<br /><input name="mdConstituentStage[constituentTicker]" value="<%= mdConstituentStage["constituentTicker"] %>" /></label>
+  </p>
+  <p>
+    <label>Coupon<br /><input name="mdConstituentStage[coupon]" value="<%= mdConstituentStage["coupon"] %>" /></label>
+  </p>
+  <p>
+    <label>Cusip<br /><input name="mdConstituentStage[cusip]" value="<%= mdConstituentStage["cusip"] %>" /></label>
+  </p>
+  <p>
+    <label>Isin<br /><input name="mdConstituentStage[isin]" value="<%= mdConstituentStage["isin"] %>" /></label>
+  </p>
+  <p>
+    <label>Sedol<br /><input name="mdConstituentStage[sedol]" value="<%= mdConstituentStage["sedol"] %>" /></label>
+  </p>
+  <p>
+    <label>Bbgid<br /><input name="mdConstituentStage[bbgid]" value="<%= mdConstituentStage["bbgid"] %>" /></label>
+  </p>
+  <p>
+    <label>Ric<br /><input name="mdConstituentStage[ric]" value="<%= mdConstituentStage["ric"] %>" /></label>
+  </p>
+  <p>
+    <label>Industry<br /><input name="mdConstituentStage[industry]" value="<%= mdConstituentStage["industry"] %>" /></label>
+  </p>
+  <p>
+    <label>Subindustry<br /><input name="mdConstituentStage[subindustry]" value="<%= mdConstituentStage["subindustry"] %>" /></label>
+  </p>
+  <p>
+    <label>Industry Group<br /><input name="mdConstituentStage[industryGroup]" value="<%= mdConstituentStage["industryGroup"] %>" /></label>
+  </p>
+  <p>
+    <label>Sector<br /><input name="mdConstituentStage[sector]" value="<%= mdConstituentStage["sector"] %>" /></label>
+  </p>
+  <p>
+    <label>Weight<br /><input name="mdConstituentStage[weight]" value="<%= mdConstituentStage["weight"] %>" /></label>
+  </p>
+  <p>
+    <input type="submit" value="Create" />
+  </p>
+</form>
+
+<%== linkTo("Back", urla("index")) %>
+
+</body>
+</html>
